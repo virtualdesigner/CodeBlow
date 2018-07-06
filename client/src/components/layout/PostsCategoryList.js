@@ -12,7 +12,7 @@ class PostsCategoryList extends Component {
   render() {
     const { posts } = this.props;
 
-    let content = null;
+    let content = <h3>There are no Posts...</h3>;
 
     let categoryList;
 

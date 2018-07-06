@@ -12,7 +12,7 @@ class QACategoryList extends Component {
   render() {
     const { qas } = this.props;
 
-    let content = null;
+    let content = <h3>There are no Q/A's...</h3>;
 
     let categoryList;
 
@@ -20,7 +20,7 @@ class QACategoryList extends Component {
       categoryList = getCategories(qas);
     }
 
-    if (categoryList) {
+    if (categoryList.length > 0) {
       content = categoryList.map((category, index) => (
         <Link to={`/qas/category/${category}`} key={index}>
           <span>{category}</span>
