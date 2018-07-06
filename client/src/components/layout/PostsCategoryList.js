@@ -14,7 +14,11 @@ class PostsCategoryList extends Component {
 
     let content = null;
 
-    let categoryList = getCategories(posts);
+    let categoryList;
+
+    if (posts) {
+      categoryList = getCategories(posts);
+    }
 
     if (categoryList.length > 0) {
       content = categoryList.map((category, index) => (

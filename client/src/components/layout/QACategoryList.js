@@ -14,9 +14,13 @@ class QACategoryList extends Component {
 
     let content = null;
 
-    let categoryList = getCategories(qas);
+    let categoryList;
 
-    if (categoryList.length > 0) {
+    if (qas) {
+      categoryList = getCategories(qas);
+    }
+
+    if (categoryList) {
       content = categoryList.map((category, index) => (
         <Link to={`/qas/category/${category}`} key={index}>
           <span>{category}</span>
