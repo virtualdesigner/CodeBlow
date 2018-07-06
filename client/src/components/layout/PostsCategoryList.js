@@ -18,14 +18,13 @@ class PostsCategoryList extends Component {
 
     if (posts) {
       categoryList = getCategories(posts);
-    }
-
-    if (categoryList.length > 0) {
-      content = categoryList.map((category, index) => (
-        <Link to={`/posts/category/${category}`} key={index}>
-          <span>{category}</span>
-        </Link>
-      ));
+      if (categoryList.length > 0) {
+        content = categoryList.map((category, index) => (
+          <Link to={`/posts/category/${category}`} key={index}>
+            <span>{category}</span>
+          </Link>
+        ));
+      }
     }
 
     return (

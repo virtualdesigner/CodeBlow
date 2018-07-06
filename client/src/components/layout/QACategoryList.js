@@ -18,14 +18,13 @@ class QACategoryList extends Component {
 
     if (qas) {
       categoryList = getCategories(qas);
-    }
-
-    if (categoryList.length > 0) {
-      content = categoryList.map((category, index) => (
-        <Link to={`/qas/category/${category}`} key={index}>
-          <span>{category}</span>
-        </Link>
-      ));
+      if (categoryList.length > 0) {
+        content = categoryList.map((category, index) => (
+          <Link to={`/qas/category/${category}`} key={index}>
+            <span>{category}</span>
+          </Link>
+        ));
+      }
     }
 
     return (
