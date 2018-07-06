@@ -1,0 +1,122 @@
+import axios from "axios";
+import {
+  ADD_POST,
+  GET_ERRORS,
+  GET_POSTS,
+  GET_POST,
+  POST_LOADING,
+  CLEAR_ERRORS
+} from "./types";
+
+// Add Post
+export const addPost = postData => dispatch => {
+  dispatch(clearErrors());
+
+  axios
+    .post("/api/posts", postData)
+    .then(res =>
+      dispatch({
+        type: ADD_POST,
+        payload: res.data
+      })
+    )
+    .catch(err =>
+      dispatch({
+        type: GET_ERRORS,
+        payload: err.response.data
+      })
+    );
+};
+
+// Get Posts
+export const getPosts = () => dispatch => {
+  dispatch(setPostLoading());
+
+  axios
+    .get("/api/posts")
+    .then(res =>
+      dispatch({
+        type: GET_POSTS,
+        payload: res.data
+      })
+    )
+    .catch(err =>
+      dispatch({
+        type: GET_POSTS,
+        payload: null
+      })
+    );
+};
+
+// Get posts by category
+export const getPostsByCategory = category => dispatch => {
+  dispatch(setPostLoading());
+
+  axios
+    .get(`/api/posts/category/${category}`)
+    .then(res =>
+      dispatch({
+        type: GET_POSTS,
+        payload: res.data
+      })
+    )
+    .catch(err =>
+      dispatch({
+        type: GET_POSTS,
+        payload: null
+      })
+    );
+};
+
+// Get Post
+export const getPost = id => dispatch => {
+  dispatch(setPostLoading);
+
+  axios
+    .get(`/api/posts/${id}`)
+    .then(res =>
+      dispatch({
+        type: GET_POST,
+        payload: res.data
+      })
+    )
+    .catch(err =>
+      dispatch({
+        type: GET_POST,
+        payload: null
+      })
+    );
+};
+
+// Add Comment
+export const addComment = (postId, commentData) => dispatch => {
+  dispatch(clearErrors());
+  axios
+    .post(`/api/posts/comment/${postId}`, commentData)
+    .then(res =>
+      dispatch({
+        type: GET_POST,
+        payload: res.data
+      })
+    )
+    .catch(err =>
+      dispatch({
+        type: GET_ERRORS,
+        payload: err.response.data
+      })
+    );
+};
+
+// Clear Errors
+const clearErrors = () => {
+  return {
+    type: CLEAR_ERRORS
+  };
+};
+
+// Set post Loading
+const setPostLoading = () => {
+  return {
+    type: POST_LOADING
+  };
+};

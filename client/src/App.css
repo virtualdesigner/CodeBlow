@@ -1,0 +1,518 @@
+html,
+body {
+  height: 100vh;
+  width: 100vw;
+  padding: 0;
+  margin: 0;
+  overflow-x: hidden;
+}
+
+/*START -- NAVBAR*/
+
+nav {
+  width: 100vw;
+}
+
+ul {
+  background-color: #424153;
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+}
+
+li {
+  color: #e7e6fc;
+  font-size: 1.3rem;
+}
+
+nav a {
+  text-align: center;
+  padding: 20px;
+  display: block;
+  text-decoration: none;
+  color: #f0f0f0;
+}
+
+.opts {
+  float: right;
+  margin-right: 20px;
+}
+
+nav a:hover {
+  color: #d65d7a;
+}
+
+.navHeading {
+  margin-left: 30px;
+  float: left;
+  font-size: 1.2em;
+}
+
+/*END -- NAVBAR*/
+
+/*START -- LANDING*/
+
+.landing {
+  position: relative;
+  height: 100vh;
+  width: 100vw;
+  background: url("./images/landing_pic.jfif") no-repeat center center;
+  background-size: cover;
+}
+
+.landing-inner {
+  background-color: rgba(0, 0, 0, 0.75);
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.landing-heading {
+  font-size: 2em;
+  color: #f2f2f0;
+  text-align: center;
+  padding-top: 50px;
+}
+
+.opt-card-list {
+  display: flex;
+  flex-direction: row;
+  margin-top: 80px;
+  justify-content: center;
+}
+
+.opt-card-list a {
+  text-align: center;
+  display: block;
+  text-decoration: none;
+  color: #f0f0f0;
+}
+
+.qa-opt {
+  width: 250px;
+  height: 250px;
+  background-color: #e4eddb;
+  margin: 25px;
+  background: url("./images/qa_pic.jfif") no-repeat center center;
+  background-size: cover;
+  color: #d65d7a;
+  border-radius: 10px;
+}
+
+.qa-opt .card-inner {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0px;
+  transition: all 200ms ease-out;
+}
+
+.post-opt {
+  width: 250px;
+  height: 250px;
+  background-color: #e4eddb;
+  margin: 25px;
+  background: url("./images/posts_pic.jfif") no-repeat center center;
+  background-size: cover;
+  color: #d65d7a;
+  border-radius: 10px;
+}
+
+.post-opt .card-inner {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0px;
+  transition: all 200ms ease-out;
+}
+
+.qa-opt:hover .card-inner {
+  background-color: rgba(0, 0, 0, 0.8);
+  font-size: 1.3em;
+}
+
+.post-opt:hover .card-inner {
+  background-color: rgba(0, 0, 0, 0.8);
+  font-size: 1.3em;
+}
+
+/******************************************************/
+/* category-lister.html */
+
+.qa-category-lister-box {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  padding-top: 50px;
+}
+
+.qa-category-lister-box a {
+  padding-left: 25px;
+  padding-right: 25px;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  margin: 10px;
+  background-color: #bee4d2;
+  border-radius: 5px;
+}
+
+.qa-category-lister-box a {
+  text-decoration: none;
+  color: inherit;
+}
+
+.qa-category-lister-box a:hover {
+  background-color: #436e4f;
+  color: #e7e6fc;
+}
+
+/********************************************************/
+
+/* ask-question.html */
+
+.ask-q-box {
+  height: 100vh;
+  width: 100vw;
+  background: url("./images/ask-question-background.jpg") no-repeat center
+    center;
+  background-size: cover;
+
+  padding-top: 80px;
+}
+
+.ask-q-box-heading {
+  text-align: center;
+}
+
+.ask-q-box form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+#ask-q-input-box {
+  border-radius: 20px;
+  font-size: 20px;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  padding: 30px;
+  outline: none;
+  background-color: rgb(255, 255, 255, 0.4);
+  transition: all 1s ease;
+}
+
+#ask-q-input-box:focus {
+  background-color: rgb(255, 255, 255, 1);
+}
+
+#question-category-list {
+  padding: 10px;
+  margin-top: 50px;
+  border-radius: 10px;
+  outline: none;
+}
+
+#ask-q-submit-btn {
+  margin-top: 30px;
+  padding-left: 180px;
+  padding-right: 180px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  border-radius: 10px;
+  outline: none;
+  border: 2px solid #203541;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  transition: all ease-in 100ms;
+}
+
+#ask-q-submit-btn:hover {
+  background-color: #616161;
+  color: white;
+  cursor: pointer;
+  box-shadow: 0 12px 16px 0 rgba(99, 49, 49, 0.24),
+    0 17px 50px 0 rgba(126, 47, 47, 0.19);
+}
+
+/***********************************************/
+
+/* qa.html */
+
+.question-answers {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 80px;
+}
+
+.question-answers .question {
+  font-size: 2.1em;
+  margin-bottom: 50px;
+  font-family: sans-serif;
+  text-align: center;
+  width: 90%;
+  text-align: center;
+}
+
+.answers-input-form form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.answers-input-form form textarea {
+  border-radius: 20px;
+  font-size: 1em;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  padding: 30px;
+  outline: none;
+}
+
+.answers-input-form form button {
+  margin-top: 20px;
+  margin-bottom: 60px;
+  padding-left: 150px;
+  padding-right: 150px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  border-radius: 10px;
+  outline: none;
+  border: 2px solid #203541;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  transition: all ease-in 100ms;
+}
+
+.answers-input-form form button:hover {
+  background-color: #616161;
+  color: white;
+  cursor: pointer;
+  box-shadow: 0 12px 16px 0 rgba(99, 49, 49, 0.24),
+    0 17px 50px 0 rgba(126, 47, 47, 0.19);
+}
+
+.answers-input-form form button:focus {
+  box-shadow: 0 6px 7px 0 rgba(99, 49, 49, 0.24),
+    0 8px 25px 0 rgba(126, 47, 47, 0.19);
+}
+
+.question-answers .answers {
+  height: fit-content;
+  width: 90%;
+  text-align: center;
+  padding: 20px;
+  margin: 5px;
+  background-color: #f9f7f7;
+  font-size: 1.3em;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  word-wrap: break-word;
+}
+
+/**********************************/
+/* qa-list.html */
+
+.qa-list {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.qa-list-heading {
+  padding-bottom: 60px;
+  font-size: 2em;
+}
+
+.qa-list .qa-list-element {
+  width: 50vw;
+  text-align: center;
+  text-decoration: none;
+  color: inherit;
+  padding: 10px;
+  margin: 20px;
+  background-color: #f9f7f7;
+  font-size: 1.1em;
+  transition: all 100ms ease-in;
+}
+
+.qa-list .qa-list-element:hover {
+  background-color: #888787;
+  color: white;
+}
+
+/***************************************************/
+/* post.html */
+.post-and-comments {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 80px;
+}
+
+.post-and-comments .post {
+  font-size: 2.1em;
+  margin-bottom: 50px;
+  font-family: sans-serif;
+  text-align: center;
+  width: 90%;
+  text-align: center;
+}
+
+.comments-input-form form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.comments-input-form form textarea {
+  border-radius: 20px;
+  font-size: 1em;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  padding: 30px;
+  outline: none;
+}
+
+.comments-input-form form button {
+  margin-top: 20px;
+  margin-bottom: 60px;
+  padding-left: 150px;
+  padding-right: 150px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  border-radius: 10px;
+  outline: none;
+  border: 2px solid #203541;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  transition: all ease-in 100ms;
+}
+
+.comments-input-form form button:hover {
+  background-color: #616161;
+  color: white;
+  cursor: pointer;
+  box-shadow: 0 12px 16px 0 rgba(99, 49, 49, 0.24),
+    0 17px 50px 0 rgba(126, 47, 47, 0.19);
+}
+
+.comments-input-form form button:focus {
+  box-shadow: 0 6px 7px 0 rgba(99, 49, 49, 0.24),
+    0 8px 25px 0 rgba(126, 47, 47, 0.19);
+}
+
+.post-and-comments .comments {
+  height: fit-content;
+  width: 90%;
+  text-align: center;
+  padding: 20px;
+  margin: 5px;
+  background-color: #f9f7f7;
+  font-size: 1.3em;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  word-wrap: break-word;
+}
+
+/****************************************************/
+/* post-list.html */
+
+.post-list {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.post-list-heading {
+  padding-bottom: 60px;
+  font-size: 2em;
+}
+
+.post-list .post-list-element {
+  width: 50vw;
+  text-align: center;
+  text-decoration: none;
+  color: inherit;
+  padding: 10px;
+  margin: 20px;
+  background-color: #f9f7f7;
+  font-size: 1.1em;
+  transition: all 100ms ease-in;
+}
+
+.post-list .post-list-element:hover {
+  background-color: #888787;
+  color: white;
+}
+
+/**********************************************/
+/* create_post.html */
+
+.post-box {
+  height: 100vh;
+  width: 100vw;
+  background: url("./images/create-post-background.jpg") no-repeat center center;
+  background-size: cover;
+
+  padding-top: 80px;
+}
+
+.post-box-heading {
+  text-align: center;
+}
+
+.post-box form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+#post-input-box {
+  border-radius: 20px;
+  font-size: 20px;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  padding: 30px;
+  outline: none;
+  background-color: rgb(255, 255, 255, 0.4);
+  transition: all 1s ease;
+}
+
+#post-input-box:focus {
+  background-color: rgb(255, 255, 255, 1);
+}
+
+#question-category-list {
+  padding: 10px;
+  margin-top: 50px;
+  border-radius: 10px;
+  outline: none;
+}
+
+#post-submit-btn {
+  margin-top: 30px;
+  padding-left: 180px;
+  padding-right: 180px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  border-radius: 10px;
+  outline: none;
+  border: 2px solid #203541;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  transition: all ease-in 100ms;
+}
+
+#post-submit-btn:hover {
+  background-color: #616161;
+  color: white;
+  cursor: pointer;
+  box-shadow: 0 12px 16px 0 rgba(99, 49, 49, 0.24),
+    0 17px 50px 0 rgba(126, 47, 47, 0.19);
+}
